@@ -1,4 +1,5 @@
-Proyecto Final Programación III
+# Proyecto Final Programación III // npm start
+
 El alumno deberá desarrollar en forma grupal un sistema de gestión de stock y ventas básico. 
 El mismo consta de dos partes la primera es el backend, con la siguiente estructura de base de datos implementada en mySql con un backend realizado en nodejs con express.
 
