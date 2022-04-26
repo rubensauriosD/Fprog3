@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
         else
         {
             console.log('POST-articulo');
-            res.json(data)
+            ()=>res.json(data)
         }
     })
 })

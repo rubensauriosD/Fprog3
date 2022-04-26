@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
         else
         {
             console.log('POST-cliente');
-            res.json(data)
+            ()=>res.json(data)
         }
     })
 })

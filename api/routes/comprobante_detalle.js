@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
         else
         {
             console.log('POST-comprobante_detalle');
-            res.json(data)
+            ()=>res.json(data)
         }
     })
 })
