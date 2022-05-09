@@ -1,26 +1,22 @@
 import {useDispatch, useSelector} from 'react-redux'
 import { useEffect,useState} from 'react';
-import { getProvincia,getPais } from '../../../actions/actions';
+import { getTipoArticulo } from '../../../actions/actions';
 import axios from 'axios'
 
-function Provincia()
+function TipoArticulo()
 {
     const dispatch = useDispatch();
-    var provincias = useSelector(state => state.provincia);
-    var paises = useSelector(state => state.pais);
-    
+    var tArticulos = useSelector(state => state.tipoArticulo);
     const [inputsPut, setInputsPut] = useState({
         nombre:''
     })
 
     const [inputs, setInputs] = useState({
-        nombre:'',
-        id_pais:''
+        nombre:''
     })
 
     useEffect(() =>{
-        dispatch(getProvincia());
-        dispatch(getPais())
+        dispatch(getTipoArticulo());
     },[])
 
     function handleChange(e) {
@@ -39,22 +35,22 @@ function Provincia()
 
     function post(e) {
         e.preventDefault();
-        axios.post('http://localhost:3001/provincia', inputs)
+        axios.post('http://localhost:3001/tipoArticulo', inputs)
         alert(`${inputs.nombre} creado correctamente`)
     }
 
     function delet(e) {
         e.preventDefault();
         var id = e.target.id;
-        axios.delete(`http://localhost:3001/provincia/${id}`, inputs)
+        axios.delete(`http://localhost:3001/tipoArticulo/${id}`, inputs)
         alert(`${inputs.nombre} borrado correctamente`)
     }
- 
+
     function put(e) {
         e.preventDefault();
         var id = e.target.id;
-        axios.put(`http://localhost:3001/provincia/${id}`, inputsPut)
-        alert(`${inputsPut.nombre} modificado correctamente`)
+        axios.put(`http://localhost:3001/tipoArticulo/${id}`, inputsPut)
+        alert(`${inputsPut.nombre}  modificado correctamente`)
     }
 
 return(
@@ -64,13 +60,6 @@ return(
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input onChange={(e) => handleChange(e)} type="text" class="form-control" id="nombre" aria-describedby="nombre" name='nombre' value={inputs.nombre} required></input>
-            <label  style={{marginTop:'25px'}} for="pais" class="form-label">Pais</label>
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='id_pais' onChange={(e) => handleChange(e)} >
-            <option selected></option>
-            {paises.map(pais => (
-                <option key={pais.id} value={pais.id}>{pais.nombre}</option>
-            ))}
-            </select>
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
@@ -79,14 +68,16 @@ return(
     <ul class="list-group" style={{ marginTop:'50px'}}>
 
     {
-        provincias.map(provincia => {
+        tArticulos.map(tArticulo => {
             return(
                 <li style={{ color:'black'}} class="list-group-item list-group-item-action list-group-item-primary" >
+
                 <div class="input-group">
-                <input type="text" class="form-control" id="nombre"    aria-describedby="nombre" name='nombre' placeholder={provincia.nombre} onChange={(e) => handleChangePut(e)}></input>
-                <button onClick={(e) => delet(e)} id={provincia.id} class="btn btn-outline-secondary" type="button">Borrar</button>
-                <button class="btn btn-outline-secondary" type="button" onClick={(e) => put(e)} id={provincia.id}>Modificar</button>
+                <input type="text" class="form-control" id="nombre"    aria-describedby="nombre" name='nombre' placeholder={tArticulo.nombre} onChange={(e) => handleChangePut(e)}></input>
+                <button onClick={(e) => delet(e)} id={tArticulo.id} class="btn btn-outline-secondary" type="button">Borrar</button>
+                <button class="btn btn-outline-secondary" type="button" onClick={(e) => put(e)} id={tArticulo.id}>Modificar</button>
                 </div>
+
                 </li>   
             )
         })
@@ -96,4 +87,4 @@ return(
 </div>)
 }
 
-export default Provincia;
+export default TipoArticulo;

@@ -66,17 +66,17 @@ return(
     
     
     <ul class="list-group" style={{ marginTop:'50px'}}>
-
     {
         paises.map(pais => {
             return(
                 <li style={{ color:'black'}} class="list-group-item list-group-item-action list-group-item-primary" >
-
-                <label for="nombre" class="form-label">Nombre</label>
+                
+                <div class="input-group">
                 <input type="text" class="form-control" id="nombre"    aria-describedby="nombre" name='nombre' placeholder={pais.nombre} onChange={(e) => handleChangePut(e)}></input>
-
-                <button style={{ marginRight:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-light" onClick={(e) => delet(e)} id={pais.id}>Borrar</button>
-                <button style={{ marginLeft:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-light" onClick={(e) => put(e)} id={pais.id}>Modificar</button>
+                <button onClick={(e) => delet(e)} id={pais.id} class="btn btn-outline-secondary" type="button">Borrar</button>
+                <button class="btn btn-outline-secondary" type="button" onClick={(e) => put(e)} id={pais.id}>Modificar</button>
+                </div>
+                
                 </li>   
             )
         })

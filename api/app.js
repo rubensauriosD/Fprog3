@@ -3,24 +3,32 @@ const app = express();
 const articulo = require('./routes/articulo');
 const cliente = require('./routes/cliente');
 const comprobante = require('./routes/comprobante');
+const detalleComprobante = require('./routes/comprobante_detalle');
 const configuracion = require('./routes/configuracion');
 const departamento = require('./routes/departamento');
 const localidad = require('./routes/localidad');
 const pais = require('./routes/pais');
 const provincia = require('./routes/provincia');
+const tArticulo = require('./routes/tipo_articulo');
+const usuario = require('./routes/usuario');
+const mp = require('./routes/mercadoPago');
 var cors = require('cors');//ESTO SOLUCIONO UN PROBLEMA CON EL CORS
 
 app.use(cors())//ESTO SOLUCIONO UN PROBLEMA CON EL CORS
 app.use(express.json());
 
+app.use('/tipoArticulo', tArticulo);
+app.use('/usuario', usuario);
 app.use('/articulo', articulo);
 app.use('/cliente', cliente);
 app.use('/comprobante', comprobante);
+app.use('/detalleComprobante', detalleComprobante);
 app.use('/configuracion', configuracion);
 app.use('/departamento', departamento);
 app.use('/localidad', localidad);
 app.use('/pais', pais);
 app.use('/provincia', provincia);
+app.post('/mp', mp)
 
 app.get("/", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")

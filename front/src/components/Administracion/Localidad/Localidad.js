@@ -1,13 +1,13 @@
 import {useDispatch, useSelector} from 'react-redux'
 import { useEffect,useState} from 'react';
-import { getProvincia,getPais } from '../../../actions/actions';
+import { getDepartamento,getLocalidad } from '../../../actions/actions';
 import axios from 'axios'
 
-function Provincia()
+function Localidad()
 {
     const dispatch = useDispatch();
-    var provincias = useSelector(state => state.provincia);
-    var paises = useSelector(state => state.pais);
+    var localidades = useSelector(state => state.localidad);
+    var departamentos = useSelector(state => state.departamento);
     
     const [inputsPut, setInputsPut] = useState({
         nombre:''
@@ -15,12 +15,12 @@ function Provincia()
 
     const [inputs, setInputs] = useState({
         nombre:'',
-        id_pais:''
+        id_departamento:''
     })
 
     useEffect(() =>{
-        dispatch(getProvincia());
-        dispatch(getPais())
+        dispatch(getDepartamento());
+        dispatch(getLocalidad())
     },[])
 
     function handleChange(e) {
@@ -39,21 +39,21 @@ function Provincia()
 
     function post(e) {
         e.preventDefault();
-        axios.post('http://localhost:3001/provincia', inputs)
+        axios.post('http://localhost:3001/localidad', inputs)
         alert(`${inputs.nombre} creado correctamente`)
     }
 
     function delet(e) {
         e.preventDefault();
         var id = e.target.id;
-        axios.delete(`http://localhost:3001/provincia/${id}`, inputs)
+        axios.delete(`http://localhost:3001/localidad/${id}`, inputs)
         alert(`${inputs.nombre} borrado correctamente`)
     }
- 
+
     function put(e) {
         e.preventDefault();
         var id = e.target.id;
-        axios.put(`http://localhost:3001/provincia/${id}`, inputsPut)
+        axios.put(`http://localhost:3001/localidad/${id}`, inputsPut)
         alert(`${inputsPut.nombre} modificado correctamente`)
     }
 
@@ -64,11 +64,11 @@ return(
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input onChange={(e) => handleChange(e)} type="text" class="form-control" id="nombre" aria-describedby="nombre" name='nombre' value={inputs.nombre} required></input>
-            <label  style={{marginTop:'25px'}} for="pais" class="form-label">Pais</label>
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='id_pais' onChange={(e) => handleChange(e)} >
+            <label  style={{marginTop:'25px'}} for="pais" class="form-label">Departamento</label>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='id_departamento' onChange={(e) => handleChange(e)} >
             <option selected></option>
-            {paises.map(pais => (
-                <option key={pais.id} value={pais.id}>{pais.nombre}</option>
+            {departamentos.map(departamento => (
+                <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
             ))}
             </select>
         </div>
@@ -79,15 +79,15 @@ return(
     <ul class="list-group" style={{ marginTop:'50px'}}>
 
     {
-        provincias.map(provincia => {
+        localidades.map(localidad => {
             return(
                 <li style={{ color:'black'}} class="list-group-item list-group-item-action list-group-item-primary" >
                 <div class="input-group">
-                <input type="text" class="form-control" id="nombre"    aria-describedby="nombre" name='nombre' placeholder={provincia.nombre} onChange={(e) => handleChangePut(e)}></input>
-                <button onClick={(e) => delet(e)} id={provincia.id} class="btn btn-outline-secondary" type="button">Borrar</button>
-                <button class="btn btn-outline-secondary" type="button" onClick={(e) => put(e)} id={provincia.id}>Modificar</button>
+                <input type="text" class="form-control" id="nombre"    aria-describedby="nombre" name='nombre' placeholder={localidad.nombre} onChange={(e) => handleChangePut(e)}></input>
+                <button onClick={(e) => delet(e)} id={localidad.id} class="btn btn-outline-secondary" type="button">Borrar</button>
+                <button class="btn btn-outline-secondary" type="button" onClick={(e) => put(e)} id={localidad.id}>Modificar</button>
                 </div>
-                </li>   
+                </li>  
             )
         })
     }
@@ -96,4 +96,4 @@ return(
 </div>)
 }
 
-export default Provincia;
+export default Localidad;
