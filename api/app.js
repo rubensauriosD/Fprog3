@@ -38,6 +38,7 @@ app.get("/", (req, res) => {
     res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
 });//ESTO SOLUCIONO UN PROBLEMA CON EL CORS, CON 2 LINEAS DE ARRIBA MAS
 
+/* Hola */
 
 app.listen(3001, () => {
     console.log('Server is running on port 3001');
