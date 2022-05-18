@@ -14,7 +14,7 @@ const usuario = require('./routes/usuario');
 const mp = require('./routes/mercadoPago');
 var cors = require('cors');//ESTO SOLUCIONO UN PROBLEMA CON EL CORS
 
-app.use(cors())//ESTO SOLUCIONO UN PROBLEMA CON EL CORS
+app.use(cors())//ESTO SOLUCIONO UN PROBLEMA CON E6L CORS
 app.use(express.json());
 
 app.use('/tipoArticulo', tArticulo);

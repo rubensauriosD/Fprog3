@@ -1,64 +1,12 @@
 const router = require('express').Router();
-const conexion = require('../db/database');
+const {getAllArticles, createArticle, updateArticle, deleteArticle} = require('../controllers/articulo.js')
 
-router.get('/', (req, res) => {
-    conexion.query('SELECT * FROM articulo', (err, rows) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            res.json(rows);
-            console.log('GET-articulo');
-        }
-    })
-})
+router.get('/', getAllArticles);
 
-router.post('/', (req, res) => {
-    const data = req.body;
+router.post('/', createArticle);
 
-    conexion.query('INSERT INTO articulo SET ?',
-        [data],(err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('POST-articulo');
-            ()=>res.json(data)
-        }
-    })
-})
+router.put('/:id', updateArticle);
 
-router.put('/:id', (req, res) => {
-    const data = req.body;
-    const id = req.params.id;
-
-    conexion.query('UPDATE articulo set ? WHERE id = ?', [data, id],
-        (err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('UPDATE-articulo');
-        }
-    })
-})
-
-router.delete('/:id', (req, res) => {
-    const id = req.params.id;
-
-    conexion.query('DELETE FROM articulo WHERE id = ?', id,
-        (err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('DELETE-articulo');
-        }
-    })
-})
+router.delete('/:id', deleteArticle)
 
 module.exports = router;
