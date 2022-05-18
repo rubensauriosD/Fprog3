@@ -1,64 +1,12 @@
 const router = require('express').Router();
-const conexion = require('../db/database');
+const { getLocalidad, createLocalidad, updateLocalidad, deleteLocalidad} = require('../controllers/localidad.js');
 
-router.get('/', (req, res) => {
-    conexion.query('SELECT * FROM localidad', (err, rows) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            res.json(rows);
-            console.log('GET-articulo');
-        }
-    })
-})
+router.get('/', getLocalidad);
 
-router.post('/', (req, res) => {
-    const data = req.body;
+router.post('/', createLocalidad);
 
-    conexion.query('INSERT INTO localidad SET ?',
-        [data],(err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('POST-localidad');
-            ()=>res.json(data)
-        }
-    })
-})
+router.put('/:id', updateLocalidad);
 
-router.put('/:id', (req, res) => {
-    const data = req.body;
-    const id = req.params.id;
-
-    conexion.query('UPDATE localidad set ? WHERE id = ?', [data, id],
-        (err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('UPDATE-localidad');
-        }
-    })
-})
-
-router.delete('/:id', (req, res) => {
-    const id = req.params.id;
-
-    conexion.query('DELETE FROM localidad WHERE id = ?', id,
-        (err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('DELETE-localidad');
-        }
-    })
-})
+router.delete('/:id', deleteLocalidad);
 
 module.exports = router;
