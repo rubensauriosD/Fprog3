@@ -1,64 +1,13 @@
 const router = require('express').Router();
 const conexion = require('../db/database');
+const {getPais, createPais, updatePais, deletePais} = require('../controllers/pais.js');
 
-router.get('/', (req, res) => {
-    conexion.query('SELECT * FROM pais', (err, rows) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            res.json(rows);
-            console.log('GET-pais');
-        }
-    })
-})
+router.get('/', getPais);
 
-router.post('/', (req, res) => {
-    const data = req.body;
+router.post('/', createPais);
 
-    conexion.query('INSERT INTO pais SET ?',
-        [data],(err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('POST-pais');
-            ()=>res.json(data)
-        }
-    })
-})
+router.put('/:id', updatePais);
 
-router.put('/:id', (req, res) => {
-    const data = req.body;
-    const id = req.params.id;
-
-    conexion.query('UPDATE pais set ? WHERE id = ?', [data, id],
-        (err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('UPDATE-pais');
-        }
-    })
-})
-
-router.delete('/:id', (req, res) => {
-    const id = req.params.id;
-
-    conexion.query('DELETE FROM pais WHERE id = ?', id,
-        (err, res) => {
-        if (err) {
-            throw err;
-        }
-        else
-        {
-            console.log('DELETE-pais');
-        }
-    })
-})
+router.delete('/:id', deletePais);
 
 module.exports = router;
