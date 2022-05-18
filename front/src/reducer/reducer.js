@@ -69,7 +69,10 @@ function reducer(state = initialState, action) {
             }
             
         case 'GENERICO':
-            state.carrito.push(action.payload)
+            // state.carrito.push(action.payload)
+            localStorage.setItem('carrito', JSON.stringify(action.payload))
+            let carrito = localStorage.getItem('carrito')
+            state.carrito.push(JSON.parse(carrito))
             return{
                 ...state,
             }

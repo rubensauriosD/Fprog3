@@ -66,21 +66,21 @@ function Configuracion()
 
     function post(e) {
         e.preventDefault();
-        axios.post('http://localhost:3001/comprobante', inputs)
+        axios.post('http://localhost:3001/configuracion', inputs)
         alert(`${inputs.nombre} creado correctamente`)
     }
 
     function delet(e) {
         e.preventDefault();
         var id = e.target.id;
-        axios.delete(`http://localhost:3001/comprobante/${id}`, inputs)
+        axios.delete(`http://localhost:3001/configuracion/${id}`, inputs)
         alert(`${inputs.nombre} borrado correctamente`)
     }
 
     function put(e) {
         e.preventDefault();
         var id = e.target.id;
-        axios.put(`http://localhost:3001/comprobante/${id}`, inputsPut)
+        axios.put(`http://localhost:3001/configuracion/${id}`, inputsPut)
         alert(`${inputsPut.nombre} modificado correctamente`)
     }
 

@@ -23,15 +23,9 @@ return(
             carrito?.map((carrito,i) => {
                 return <Card
                 key={i}
-                id={carrito.id}
                 nombre={carrito.nombre}
-                codigo={carrito.codigo}
-                stock={carrito.stock}
-                precio_costo={carrito.precio_costo}
+                cantidad={carrito.cantidad}
                 precio_venta={carrito.precio_venta}
-                stock_minimo={carrito.stock_minimo}
-                stock_negativo={carrito.stock_negativo}
-                id_tipo_articulo={carrito.id_tipo_articulo}
                 img={carrito.img}/>
             })
         }

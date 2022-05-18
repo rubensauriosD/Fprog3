@@ -34,7 +34,10 @@ function Card({id,nombre,codigo,stock,precio_costo,precio_venta,stock_minimo,sto
                 <li class="list-group-item">${precio_venta}</li>
             </ul>
             <div>
-            <button type="submit" class="btn btn-primary" onClick={(e) => postCarrito(articulo,e)}>Comprar</button>
+            {
+                stock_minimo <= stock ? <button type="submit" class="btn btn-primary" onClick={(e) => postCarrito(articulo,e)}>Guardar en carrito</button> : <button type="submit" class="btn btn-primary" disabled>No hay stock</button>
+            }
+            {/* <button type="submit" class="btn btn-primary" onClick={(e) => postCarrito(articulo,e)}>Guardar en carrito</button> */}
             </div>
         </div>
 </div>)

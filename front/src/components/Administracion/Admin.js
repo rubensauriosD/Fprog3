@@ -10,14 +10,14 @@ function Admin(){
 
     useEffect(() => {
         if(!cookies.get('usuario')){
-            window.location.href = './login';
+            window.location.href = './';
         }
     });
 
     function cerrarSesion() {
-        cookies.remove('usuario',{path:'/login'});
-        cookies.remove('contrasena',{path:'/login'});
-        window.location.href = './login';
+        cookies.remove('usuario',{path:'/'});
+        cookies.remove('contrasena',{path:'/'});
+        window.location.href = './';
     }
 
     return(
@@ -93,6 +93,7 @@ function Admin(){
             </div>
         </div>
     </nav>
+    
 </div>)
 }
 
