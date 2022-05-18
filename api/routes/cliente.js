@@ -1,7 +1,9 @@
 const router = require('express').Router();
-const {getAllClientes, createCliente, updateCliente, deleteCliente} = require('../controllers/cliente.js');
+const {getAllClientes, getClienteId, createCliente, updateCliente, deleteCliente} = require('../controllers/cliente.js');
 
 router.get('/', getAllClientes);
+
+router.get('/:id', getClienteId);
 
 router.post('/', createCliente);
 
