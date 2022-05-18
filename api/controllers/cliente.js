@@ -14,6 +14,23 @@ async function getAllClientes (req, res) {
     })
 }
 
+async function getClienteId (req, res) {
+
+    const id = req.params.id;
+
+    conexion.query('SELECT * FROM cliente WHERE id = ?', id,
+    (err, rows) => {
+        if(err) {
+            throw err;
+        }
+        else
+        {
+            res.json(rows);
+            console.log('GET-cliente')
+        }
+    })
+}
+
 async function createCliente (req, res) {
     const data = req.body;
 
@@ -65,6 +82,7 @@ async function deleteCliente (req, res) {
 
 module.exports = {
     getAllClientes,
+    getClienteId,
     createCliente,
     updateCliente,
     deleteCliente
