@@ -84,7 +84,8 @@ function Admin(){
                 <li class="nav-item navbar-brand">
                 <Link class="nav-link" to='/admin/pais'>Pais</Link>
                 </li>
-                <li class="nav-item navbar-brand">
+                
+                <li class="nav-item navbar-brand" style={{marginTop:'5px'}}>
                 <button class="btn btn-primary" type="submit" onClick={(e) => cerrarSesion(e)}>
                 Cerrar Sesion
                 </button>
@@ -93,7 +94,7 @@ function Admin(){
             </div>
         </div>
     </nav>
-    
+    <Link class="btn btn-primary" to='/admin/reportes' style={{marginTop:'800px', marginLeft:'800px', position:'fixed'}}>Reportes</Link>
 </div>)
 }
 

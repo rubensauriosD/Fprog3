@@ -6,7 +6,7 @@ import axios from 'axios'
 function Departamento()
 {
     const dispatch = useDispatch();
-    var provincias = useSelector(state => state.localidad);
+    var provincias = useSelector(state => state.provincia);
     var departamentos = useSelector(state => state.departamento);
     
     const [inputsPut, setInputsPut] = useState({

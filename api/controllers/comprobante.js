@@ -13,6 +13,54 @@ async function getAllComprobante (req, res) {
     })
 }
 
+async function getAllSales (req, res) 
+{
+    const fecha = req.query.fecha;
+
+    conexion.query('SELECT * FROM comprobante WHERE fecha = ?', fecha, (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        else
+        {
+            res.json(rows);
+            console.log('GET-ventas-totales');
+        }
+    })
+}
+
+async function getAllSalesForArticle (req, res) 
+{
+    const id = req.query.id;
+
+    conexion.query('SELECT * FROM comprobante WHERE articulo_id = ?', id, (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        else
+        {
+            res.json(rows);
+            console.log('GET-ventas-articulo');
+        }
+    })
+}
+
+async function getAllSalesForClient (req, res) 
+{
+    const id = req.query.id;
+
+    conexion.query('SELECT * FROM comprobante WHERE id_cliente = ?', id, (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        else
+        {
+            res.json(rows);
+            console.log('GET-ventas-cliente');
+        }
+    })
+}
+
 async function createComprobante (req, res) {
     const data = req.body;
 
@@ -66,5 +114,8 @@ module.exports = {
     getAllComprobante,
     createComprobante,
     updateComprobante,
-    deleteComprobante
+    deleteComprobante,
+    getAllSales,
+    getAllSalesForArticle,
+    getAllSalesForClient
 }

@@ -17,12 +17,12 @@ import Compra from './components/Tienda/Carrito/Compra/Compra';
 import PagoExitoso from './components/Tienda/Pago/PagoExitoso';
 import PagoFallido from './components/Tienda/Pago/PagoFallido';
 import PagoPendiente from './components/Tienda/Pago/PagoPendiente';
-import Inicio from './inicio';
+import Reportes from './components/Administracion/Reportes/Reportes';
 
 function App() {
   return (
     <div className="App">
-      <Route exact path={['/admin','/admin/pais', '/admin/provincia', '/admin/tipoArticulo', '/admin/localidad','/admin/departamento','/admin/configuracion','/admin/comprobante','/admin/cliente','/admin/articulo']} component={Adminitracion}></Route>
+      <Route exact path={['/admin','/admin/pais', '/admin/provincia', '/admin/tipoArticulo', '/admin/localidad','/admin/departamento','/admin/configuracion','/admin/comprobante','/admin/cliente','/admin/articulo','/admin/reportes']} component={Adminitracion}></Route>
 
       <Route exact path='/admin/pais' component={Pais}></Route>
       <Route exact path='/admin/provincia' component={Provincia}></Route>
@@ -33,6 +33,7 @@ function App() {
       <Route exact path='/admin/cliente' component={Cliente}></Route>
       <Route exact path='/admin/configuracion' component={Configuracion}></Route>
       <Route exact path='/admin/comprobante' component={Comprobante}></Route>
+      <Route exact path='/admin/reportes' component={Reportes}></Route>
 
         {/* <Route exact path='/login' component={Login}></Route> */}
       <Route exact path='/tienda' component={Tienda}></Route>

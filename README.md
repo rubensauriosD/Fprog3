@@ -9,18 +9,20 @@ El mismo consta de dos partes la primera es el backend, con la siguiente estruct
 
 Y la segunda de una aplicación web (frontend) realizada en javascript, usando html y css, con las siguientes funcionalidades.
 Funcionalidades mínimas del sistema:
--	Dos modos de acceso, uno como administrador con clave y otro como usuario sin clave, el modo administrador tiene acceso a todas las funciones mientras que el usuario solo a la venta. 
--	Administración de la tabla de configuración del sistema (solo en modo admin).
--	CRUD de las tablas de parametrización (país, provincia, clientes, etc.)
--	Venta de artículos restando el stock, manejando comprobante para registrarlas.
--	Anulación de venta (baja lógica del comprobante) sumando stock.
--	Aviso de faltante de artículos (cuando cantidad este por debajo del mínimo).
+-	Dos modos de acceso, uno como administrador con clave y otro como usuario sin clave, el modo administrador tiene acceso a todas las funciones mientras que el usuario solo a la venta.
+-	Administración de la tabla de configuración del sistema (solo en modo admin). HECHO
+-	CRUD de las tablas de parametrización (país, provincia, clientes, etc.) HECHO
+-	Venta de artículos restando el stock, manejando comprobante para registrarlas. HECHO
+-	Anulación de venta (baja lógica del comprobante) sumando stock. HECHO
+-	Aviso de faltante de artículos (cuando cantidad este por debajo del mínimo). HECHO
+
 -	Reportes:
-o	Ventas totales (con filtros por fechas).
-o	Ventas por artículos (con filtros por fechas).
-o	Ventas por clientes (con filtros por fechas).
-o	Reporte de artículos. 
-o	Reporte de artículos para reponer.
-Utilizar views, triggers, storeprocedures y/o functions para la gestión de datos como numero de comprobante, descarga de stock, reportes etc.
+o	Ventas totales (con filtros por fechas). LA SUMA DE LOS MONTOS DE TODOS LOS COMPROBANTES DEL DIA
+
+o	Ventas por artículos (con filtros por fechas). ES LA SUMA DE LOS MONTOS DE TODOS LOS COMPROBANTES DEL DIA POR ARTÍCULO
+
+o	Ventas por clientes (con filtros por fechas).  ES LA SUMA DE LOS MONTOS DE TODOS LOS COMPROBANTES DEL DIA POR CLIENTE
+
+o	Reporte de artículos para reponer. ACA MUESTRO LA CANTIDAD DE ARTÍCULOS QUE FALTAN PARA REPONERSE(EN LISTA)
 
 

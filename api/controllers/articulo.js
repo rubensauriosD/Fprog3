@@ -15,6 +15,21 @@ async function getAllArticles (req, res) {
 
 }
 
+async function getArticlesMissing (req, res) {
+
+    conexion.query('SELECT * FROM articulo WHERE stock <= stock_minimo', (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        else
+        {
+            res.json(rows);
+            console.log('GET-articulo-faltantes');
+        }
+    })
+
+}
+
 async function createArticle (req, res) {
     const data = req.body;
 
@@ -67,5 +82,6 @@ module.exports = {
     getAllArticles,
     createArticle,
     updateArticle,
-    deleteArticle
+    deleteArticle,
+    getArticlesMissing
 }

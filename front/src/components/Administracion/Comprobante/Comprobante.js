@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux'
 import { useEffect,useState} from 'react';
-import { getCliente, getComprobante } from '../../../actions/actions';
+import { getCliente, getComprobante, getArticulo } from '../../../actions/actions';
 import axios from 'axios'
 
 function Comprobante()
@@ -8,11 +8,14 @@ function Comprobante()
     const dispatch = useDispatch();
     var comprobantes = useSelector(state => state.comprobante);
     var clientes = useSelector(state => state.cliente);
+    var articulos = useSelector(state => state.articulo);
     const [inputsPut, setInputsPut] = useState({
         numero:'',
         fecha:'',
         estado:'',
         id_cliente:'',
+        articulo_id:'',
+        cantidad:''
     })
 
     const [inputs, setInputs] = useState({
@@ -20,11 +23,14 @@ function Comprobante()
         fecha:'',
         estado:'',
         id_cliente:'',
+        articulo_id:'',
+        cantidad:''
     })
 
     useEffect(() =>{
         dispatch(getCliente());
         dispatch(getComprobante())
+        dispatch(getArticulo())
     },[])
 
     function handleChange(e) {
@@ -61,6 +67,12 @@ function Comprobante()
         alert(`${inputsPut.nombre} modificado correctamente`)
     }
 
+    function putArticulo(id,cantidad) {
+        let stock = articulos.find(articulo => articulo.id === id).stock;
+        let newStock = stock + cantidad;
+        axios.put(`http://localhost:3001/articulo/${id}`, {stock:newStock})
+    }
+
 return(
 <div style={{width:'1000px', marginLeft:'500px', marginTop
     :'50px'}}>
@@ -80,16 +92,30 @@ return(
             <label class="visually-hidden" for="autoSizingInput"></label>
             <input onChange={(e) => handleChange(e)} name='estado' value={inputs.estado} type="text" class="form-control" id="autoSizingInput" placeholder="Estado"></input>
         </div>
+
+        <div class="col-auto">
+            <label class="visually-hidden" for="autoSizingInput"></label>
+            <input onChange={(e) => handleChange(e)} name='cantidad' value={inputs.cantidad} type="text" class="form-control" id="autoSizingInput" placeholder="Cantidad"></input>
+        </div>
         
         <div class="col-auto">
         <select class="form-select" id="inlineFormSelectPref" name='id_cliente' onChange={(e) => handleChange(e)}>
-        <option selected>Localidad...</option>
+        <option selected>Clientes...</option>
         {clientes.map(cliente => (
                 <option key={cliente.id} value={cliente.id}>{cliente.ape_nom}</option>
             ))}
         </select>
         </div>
 
+        <div class="col-auto">
+        <select class="form-select" id="inlineFormSelectPref" name='articulo_id' onChange={(e) => handleChange(e)}>
+        <option selected>Articulos...</option>
+        {articulos.map(articulo => (
+                <option key={articulo.id} value={articulo.id}>{articulo.nombre}</option>
+            ))}
+        </select>
+        </div>
+        
         <div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
@@ -104,10 +130,23 @@ return(
                 
                 <div class="input-group">
                 <input type="text" class="form-control" id="nombre"    aria-describedby="nombre" name='estado' placeholder={comprobante.estado} onChange={(e) => handleChangePut(e)}></input>
+
                 <input type="text" class="form-control" id="numero"    aria-describedby="nombre" name='numero' placeholder={comprobante.numero} onChange={(e) => handleChangePut(e)}></input>
+
                 <input type="text" class="form-control" id="fecha"    aria-describedby="nombre" name='fecha' placeholder={comprobante.fecha} onChange={(e) => handleChangePut(e)}></input>
 
-                <button onClick={(e) => delet(e)} id={comprobante.id} class="btn btn-outline-secondary" type="button">Borrar</button>
+                <input type="text" class="form-control" id="fecha"    aria-describedby="nombre" name='fecha' placeholder={comprobante.id_cliente} onChange={(e) => handleChangePut(e)}></input>
+                
+                <input type="text" class="form-control" id="fecha"    aria-describedby="nombre" name='fecha' placeholder={comprobante.articulo_id} onChange={(e) => handleChangePut(e)}></input>
+
+                <input type="text" class="form-control" id="fecha"    aria-describedby="nombre" name='fecha' placeholder={comprobante.cantidad} onChange={(e) => handleChangePut(e)}></input>
+
+                <input type="text" class="form-control" id="fecha"    aria-describedby="nombre" name='fecha' placeholder={comprobante.precio} onChange={(e) => handleChangePut(e)}></input>
+
+                <button onClick={
+                    (e) => {delet(e)
+                        putArticulo(comprobante.articulo_id,comprobante.cantidad)
+                    }} id={comprobante.id} class="btn btn-outline-secondary" type="button">Borrar</button>
                 <button class="btn btn-outline-secondary" type="button" onClick={(e) => put(e)} id={comprobante.id}>Modificar</button>
                 </div>
 

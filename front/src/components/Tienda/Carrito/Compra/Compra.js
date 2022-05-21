@@ -2,11 +2,12 @@ import {Link} from 'react-router-dom';
 // import Cards from './Cards/Cards';
 import {useDispatch, useSelector} from 'react-redux'
 import { useEffect,useState} from 'react';
-import {getCarrito} from '../../../../actions/actions'
+import {getCarrito, getCliente} from '../../../../actions/actions'
 import axios from 'axios';
 
 function Compra(){
     var carrito = useSelector(state => state.carrito);
+    var clientes = useSelector(state => state.cliente);
     const dispatch = useDispatch();
     const [inputs, setInputs] = useState({
         nombre:'',
@@ -17,17 +18,20 @@ function Compra(){
         calle:'',
         numero:'',
         email:'',
-        items: carrito
+        items: carrito,
+        id_cliente: ''
     })
     
 
     useEffect(() =>{
         dispatch(getCarrito());
+        dispatch(getCliente());
     },[])
 
     function postmp(e) {
         e.preventDefault();
         axios.post('http://localhost:3001/mp', {inputs,carrito}).then(res => {window.open(res.data)}).catch(err => {console.log(err)})
+        localStorage.setItem('comprobante',JSON.stringify({inputs,carrito}))
     }
 
     function handleChange(e) {
@@ -90,6 +94,14 @@ return(
             <label class="visually-hidden" for="autoSizingInput"></label>
             <input onChange={(e) => handleChange(e)} name='email' value={inputs.email} type="email" class="form-control" id="autoSizingInput" placeholder="Email"></input>
         </div>
+
+        <label  style={{marginTop:'25px'}} class="form-label">Clientes</label>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name='id_cliente' onChange={(e) => handleChange(e)} >
+            <option selected></option>
+            {clientes.map(cliente => (
+                <option key={cliente.id} value={cliente.id}>{cliente.ape_nom}</option>
+            ))}
+            </select>
     </form>
 
     <h3 style={{ marginTop:'50px'}}>Carrito</h3>
@@ -106,7 +118,6 @@ return(
                 <button class="btn btn-outline-secondary" type="button">+</button>
                 <button class="btn btn-outline-secondary" type="button">-</button>
                 </div>
-
                 </li>   
             )
         })
