@@ -32,8 +32,9 @@ async function getAllSales (req, res)
 async function getAllSalesForArticle (req, res) 
 {
     const id = req.query.id;
+    const fecha = req.query.fecha;
 
-    conexion.query('SELECT * FROM comprobante WHERE articulo_id = ?', id, (err, rows) => {
+    conexion.query(`SELECT * FROM comprobante WHERE fecha = ? AND articulo_id = ${id}`,fecha, (err, rows) => {
         if (err) {
             throw err;
         }
@@ -48,8 +49,9 @@ async function getAllSalesForArticle (req, res)
 async function getAllSalesForClient (req, res) 
 {
     const id = req.query.id;
+    const fecha = req.query.fecha;
 
-    conexion.query('SELECT * FROM comprobante WHERE id_cliente = ?', id, (err, rows) => {
+    conexion.query(`SELECT * FROM comprobante WHERE fecha = ? AND id_cliente =${id}`, fecha, (err, rows) => {
         if (err) {
             throw err;
         }

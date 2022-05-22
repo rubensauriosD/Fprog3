@@ -16,7 +16,7 @@ Funcionalidades mínimas del sistema:
 -	Anulación de venta (baja lógica del comprobante) sumando stock. HECHO
 -	Aviso de faltante de artículos (cuando cantidad este por debajo del mínimo). HECHO
 
--	Reportes:
+-	Reportes: HECHOO UWU
 o	Ventas totales (con filtros por fechas). LA SUMA DE LOS MONTOS DE TODOS LOS COMPROBANTES DEL DIA
 
 o	Ventas por artículos (con filtros por fechas). ES LA SUMA DE LOS MONTOS DE TODOS LOS COMPROBANTES DEL DIA POR ARTÍCULO

@@ -9,7 +9,10 @@ const initialState = {
     configuracion:[],
     comprobante:[],
     carrito:[],
-    articulosFaltantes:[]
+    articulosFaltantes:[],
+    reporteTotal:0,
+    reporteCliente:0,
+    reporteArticulo:0,
 } 
 
 function reducer(state = initialState, action) {
@@ -99,6 +102,24 @@ function reducer(state = initialState, action) {
             return{
                 ...state,
             }
+
+        case 'REPORTE_TOTAL':
+                return{
+                    ...state,
+                    reporteTotal: action.payload,
+                }
+
+        case 'REPORTE_CLIENTE':
+                return{
+                    ...state,
+                    reporteCliente: action.payload,
+                }
+
+        case 'REPORTE_ARTICULO':
+                return{
+                    ...state,
+                    reporteArticulo: action.payload,
+                }
 
         default:
             return state;

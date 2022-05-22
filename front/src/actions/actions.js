@@ -118,3 +118,27 @@ export function vaciarCarrito()
         dispatch({type: 'VACIAR_CARRITO'})
     }
 };
+
+export function reporteTotal(gen)
+{
+    return function (dispatch)
+    {
+        dispatch({type: 'REPORTE_TOTAL', payload: gen})
+    }
+};
+
+export function reporteCliente(gen)
+{
+    return function (dispatch)
+    {
+        dispatch({type: 'REPORTE_CLIENTE', payload: gen})
+    }
+};
+
+export function reporteArticulo(gen)
+{
+    return function (dispatch)
+    {
+        dispatch({type: 'REPORTE_ARTICULO', payload: gen})
+    }
+};
