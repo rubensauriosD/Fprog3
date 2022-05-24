@@ -78,7 +78,7 @@ function Reportes(){
         {
             ventasArticulos = response.map(venta => venta.precio);
             ventasArticulos = ventasArticulos.reduce((a, b) => a + b);
-            dispatch(reporteTotal(ventasArticulos));
+            dispatch(reporteArticulo(ventasArticulos));
         }
         else{
             ventasArticulos = 0;
