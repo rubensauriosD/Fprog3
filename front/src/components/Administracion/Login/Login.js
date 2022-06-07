@@ -74,7 +74,7 @@ function Login()
 return(
 
 
-    <div class="container">
+    <div class="container" style={{marginTop:'12rem'}}>
         <div class="row">
             <div class="col-12 col-md-4 offset-md-4">
 
@@ -100,7 +100,7 @@ return(
 
                 <b><p class="text-black text-center">
                     No sos parte de nuestra familia?
-                    <Link class="nav-link text-decoration-none text-black" to='/registro'>Registrate aqui</Link>
+                    <Link class="nav-link  text-decoration-none text-black" to='/registro'>Registrate aqui</Link>
                 </p></b>
 
             </div>
