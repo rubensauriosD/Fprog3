@@ -126,7 +126,7 @@ return(
     {
         articulos.map(articulo => {
             return(
-                <li style={{ color:'black',marginBottom:'100px'}} class="list-group-item list-group-item-action list-group-item-primary" >
+                <li style={{ color:'black',marginBottom:'100px'}} class="list-group-item list-group-item-action list-group-item-success" >
 
                 <div class="row gy-2 gx-3 align-items-center">
                 <div class="col-auto">

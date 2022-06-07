@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux'
 import Cookies from 'universal-cookie';
 import { getPais, getProvincia, getDepartamento, getLocalidad } from '../../../actions/actions';
-import diseño from "../Login/login.css"
+import Estilos from "../Registro/registro.css"
 
 const baseUrl = 'http://localhost:3001/usuario';
 
@@ -57,7 +57,7 @@ function Registro()
 
 return(
     <div class="container">
-        <div class="row mt-5">
+        <div class="row">
             <div class="col-12 col-md-4 offset-md-4">
 
                 <h2 id="titIniciar" class="text-center mt-5 mb-5">Registrate!</h2>
@@ -107,11 +107,12 @@ return(
                                 ))}
                     </select>
 
-                    <hr></hr>
+                    <hr class="text-white"></hr>
 
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-success btn-lg">Registrarse</button>
                     </div>
+
                 </form>
 
             </div>
