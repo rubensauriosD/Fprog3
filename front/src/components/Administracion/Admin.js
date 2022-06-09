@@ -24,7 +24,7 @@ function Admin(){
     return(
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
                 <div class="container-fluid">
-                    <a>ADMINISTRACION 📋</a>
+                    <a class="h2">ADMINISTRACION 📋</a>
                     <ul class="navbar-nav">
                         <li class="nav-item navbar-brand">
                             <Link class="nav-link" to='/admin/articulo'>Articulos</Link>
