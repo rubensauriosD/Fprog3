@@ -79,110 +79,40 @@ function Cliente()
     }
 
 return(
-<div style={{width:'1000px', marginLeft:'500px', marginTop
-    :'50px'}}>
-    <form class="row gy-2 gx-3 align-items-center" onSubmit={(e)=> post(e)}>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='ape_nombre' value={inputs.ape_nombre} type="text" class="form-control" id="autoSizingInput" placeholder="Apellido y Nombre"></input>
-        </div>
+    <div class="container">
+            <div class="row">
+                <div style={{marginBottom: "50px"}} class="col-sm-12 col-md-5 col-lg-5">
+                    
+                    <form class=""  onSubmit={(e)=> post(e)}>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='domicilio' value={inputs.domicilio} type="text" class="form-control" id="autoSizingInput" placeholder="Domicilio"></input>
-        </div>
-
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='email' value={inputs.email} type='email' class="form-control" id="autoSizingInput" placeholder="Email"></input>
-        </div>
-
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='celular' value={inputs.celular} type="number" class="form-control" id="autoSizingInput" placeholder="Celular"></input>
-        </div>
-
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='estado' value={inputs.estado} type="text" class="form-control" id="autoSizingInput" placeholder="Estado"></input>
-        </div>
-
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChange(e)}>
-        <option selected>Pais...</option>
-        {paises.map(pais => (
-                <option key={pais.id} value={pais.id}>{pais.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChange(e)}>
-        <option selected>Provincia...</option>
-        {provincias.map(provincia => (
-                <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
-        <option selected>Departamento...</option>
-        {departamentos.map(departamento => (
-                <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
-        <option selected>Localidad...</option>
-        {localidades.map(localidad => (
-                <option key={localidad.id} value={localidad.id}>{localidad.nombre}</option>
-            ))}
-        </select>
-        </div>
-
-        <div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
-
-</form>
-
-    <ul class="list-group" style={{ marginTop:'50px'}}>
-    {
-        clientes.map(cliente => {
-            return(
-                <li style={{ color:'black',marginBottom:'100px'}} class="list-group-item list-group-item-action list-group-item-primary" >
-
-                <div class="col-auto">
+                        <div class="mb-3">
                             <label class="visually-hidden" for="autoSizingInput"></label>
-                            <input onChange={(e) => handleChangePut(e)} name='ape_nombre' value={inputsPut.ape_nombre} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.ape_nom}></input>
+                            <input onChange={(e) => handleChange(e)} name='ape_nombre' value={inputs.ape_nombre} type="text" class="form-control" id="autoSizingInput" placeholder="Apellido y Nombre"></input>
                         </div>
 
-                        <div class="col-auto">
+                        <div class="mb-3">
                             <label class="visually-hidden" for="autoSizingInput"></label>
-                            <input onChange={(e) => handleChangePut(e)} name='domicilio' value={inputsPut.domicilio} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.domicilio}></input>
+                            <input onChange={(e) => handleChange(e)} name='domicilio' value={inputs.domicilio} type="text" class="form-control" id="autoSizingInput" placeholder="Domicilio"></input>
                         </div>
 
-                        <div class="col-auto">
+                        <div class="mb-3">
                             <label class="visually-hidden" for="autoSizingInput"></label>
-                            <input onChange={(e) => handleChangePut(e)} name='email' value={inputsPut.email} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.email}></input>
+                            <input onChange={(e) => handleChange(e)} name='email' value={inputs.email} type='email' class="form-control" id="autoSizingInput" placeholder="Email"></input>
                         </div>
 
-                        <div class="col-auto">
+                        <div class="mb-3">
                             <label class="visually-hidden" for="autoSizingInput"></label>
-                            <input onChange={(e) => handleChangePut(e)} name='celular' value={inputsPut.celular} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.celular}></input>
+                            <input onChange={(e) => handleChange(e)} name='celular' value={inputs.celular} type="number" class="form-control" id="autoSizingInput" placeholder="Celular"></input>
                         </div>
 
-                        <div class="col-auto">
+                        <div class="mb-3">
                             <label class="visually-hidden" for="autoSizingInput"></label>
-                            <input onChange={(e) => handleChangePut(e)} name='estado' value={inputsPut.estado} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.estado}></input>
+                            <input onChange={(e) => handleChange(e)} name='estado' value={inputs.estado} type="text" class="form-control" id="autoSizingInput" placeholder="Estado"></input>
                         </div>
-                        
-                        <div class="col-auto">
-                        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChangePut(e)}>
+
+                        <div class="mb-3">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChange(e)}>
                         <option selected>Pais...</option>
                         {paises.map(pais => (
                                 <option key={pais.id} value={pais.id}>{pais.nombre}</option>
@@ -190,8 +120,8 @@ return(
                         </select>
                         </div>
                         
-                        <div class="col-auto">
-                        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChangePut(e)}>
+                        <div class="mb-3">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChange(e)}>
                         <option selected>Provincia...</option>
                         {provincias.map(provincia => (
                                 <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>
@@ -199,8 +129,8 @@ return(
                         </select>
                         </div>
                         
-                        <div class="col-auto">
-                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChangePut(e)}>
+                        <div class="mb-3">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
                         <option selected>Departamento...</option>
                         {departamentos.map(departamento => (
                                 <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
@@ -208,8 +138,8 @@ return(
                         </select>
                         </div>
                         
-                        <div class="col-auto">
-                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChangePut(e)}>
+                        <div class="mb-3">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
                         <option selected>Localidad...</option>
                         {localidades.map(localidad => (
                                 <option key={localidad.id} value={localidad.id}>{localidad.nombre}</option>
@@ -217,15 +147,97 @@ return(
                         </select>
                         </div>
 
-                <button style={{ marginRight:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-light" onClick={(e) => delet(e)} id={cliente.id}>Borrar</button>
-                <button style={{ marginLeft:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-light" onClick={(e) => put(e)} id={cliente.id}>Modificar</button>
-                </li>   
-            )
-        })
-    }
-    </ul>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
 
-</div>)
+                </div>
+
+                <div className='col-sm-12 col-md-7 col-lg-7'>
+
+                    <ul class="list-group">  
+                    {
+                        clientes.map(cliente => {
+
+                            return(
+
+                                <li style={{ color:'black',marginBottom:'100px'}} class="list-group-item list-group-item-action list-group-item-primary mb-2" >
+
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='ape_nombre' value={inputsPut.ape_nombre} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.ape_nom}></input>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='domicilio' value={inputsPut.domicilio} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.domicilio}></input>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='email' value={inputsPut.email} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.email}></input>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='celular' value={inputsPut.celular} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.celular}></input>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='estado' value={inputsPut.estado} type="text" class="form-control" id="autoSizingInput" placeholder={cliente.estado}></input>
+                                    </div>
+                                            
+                                    <div class="mb-3">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChangePut(e)}>
+                                            <option selected>Pais...</option>
+                                            {paises.map(pais => (
+                                                    <option key={pais.id} value={pais.id}>{pais.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+                                            
+                                    <div class="mb-3">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChangePut(e)}>
+                                            <option selected>Provincia...</option>
+                                            {provincias.map(provincia => (
+                                                    <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+                                            
+                                    <div class="mb-3">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChangePut(e)}>
+                                            <option selected>Departamento...</option>
+                                            {departamentos.map(departamento => (
+                                                    <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+                                            
+                                    <div class="mb-3">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChangePut(e)}>
+                                            <option selected>Localidad...</option>
+                                            {localidades.map(localidad => (
+                                                    <option key={localidad.id} value={localidad.id}>{localidad.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+
+                                    <button style={{ marginRight:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-danger" onClick={(e) => delet(e)} id={cliente.id}>Borrar</button>
+                                    <button style={{ marginLeft:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-warning" onClick={(e) => put(e)} id={cliente.id}>Modificar</button>
+                                </li>   
+                            )
+                        })
+                    }
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+)
 }
 
 export default Cliente;

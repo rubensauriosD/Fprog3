@@ -85,182 +85,189 @@ function Configuracion()
     }
 
 return(
-<div style={{width:'1000px', marginLeft:'500px', marginTop
-    :'50px'}}>
-    <form class="row gy-2 gx-3 align-items-center" onSubmit={(e)=> post(e)}>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='codigo_admin' value={inputs.codigo_admin} type="text" class="form-control" id="autoSizingInput" placeholder="Codigo Admin"></input>
-        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='demo' value={inputs.demo} type="text" class="form-control" id="autoSizingInput" placeholder="Demo"></input>
-        </div>
+        <div class="container">
+            <div class="row text-center">
+                <div style={{marginBottom: "50px"}} class="col-sm-12 col-md-4 col-lg-5">
+                    <form class="row gy-2 gx-3 align-items-center" onSubmit={(e)=> post(e)}>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='ultimo_numero_comprobante' value={inputs.ultimo_numero_comprobante} type="number" class="form-control" id="autoSizingInput" placeholder="Ultimo numero comprobante"></input>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='codigo_admin' value={inputs.codigo_admin} type="text" class="form-control" id="autoSizingInput" placeholder="Codigo Admin"></input>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='usa_decimal' value={inputs.usa_decimal} type="number" class="form-control" id="autoSizingInput" placeholder="Usa Decimal"></input>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='demo' value={inputs.demo} type="text" class="form-control" id="autoSizingInput" placeholder="Demo"></input>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='localidad_default' value={inputs.localidad_default} type="text" class="form-control" id="autoSizingInput" placeholder="Localidad Default"></input>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='ultimo_numero_comprobante' value={inputs.ultimo_numero_comprobante} type="number" class="form-control" id="autoSizingInput" placeholder="Ultimo numero comprobante"></input>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='departamento_default' value={inputs.departamento_default} type="text" class="form-control" id="autoSizingInput" placeholder="Departamento Default"></input>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='usa_decimal' value={inputs.usa_decimal} type="number" class="form-control" id="autoSizingInput" placeholder="Usa Decimal"></input>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='provincia_default' value={inputs.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder="Provincia Default"></input>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='localidad_default' value={inputs.localidad_default} type="text" class="form-control" id="autoSizingInput" placeholder="Localidad Default"></input>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChange(e)} name='provincia_default' value={inputs.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder="Pais Default"></input>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='departamento_default' value={inputs.departamento_default} type="text" class="form-control" id="autoSizingInput" placeholder="Departamento Default"></input>
+                        </div>
 
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChange(e)}>
-        <option selected>Pais...</option>
-        {paises.map(pais => (
-                <option key={pais.id} value={pais.id}>{pais.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChange(e)}>
-        <option selected>Provincia...</option>
-        {provincias.map(provincia => (
-                <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
-        <option selected>Departamento...</option>
-        {departamentos.map(departamento => (
-                <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
-        <option selected>Localidad...</option>
-        {localidades.map(localidad => (
-                <option key={localidad.id} value={localidad.id}>{localidad.nombre}</option>
-            ))}
-        </select>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='provincia_default' value={inputs.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder="Provincia Default"></input>
+                        </div>
 
-        <div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
+                        <div class="mb-2">
+                            <label class="visually-hidden" for="autoSizingInput"></label>
+                            <input onChange={(e) => handleChange(e)} name='provincia_default' value={inputs.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder="Pais Default"></input>
+                        </div>
 
-</form>
+                        <div class="mb-2">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChange(e)}>
+                        <option selected>Pais...</option>
+                        {paises.map(pais => (
+                                <option key={pais.id} value={pais.id}>{pais.nombre}</option>
+                            ))}
+                        </select>
+                        </div>
 
-    <ul class="list-group" style={{ marginTop:'50px'}}>
-    {
-        configuraciones.map(configuracion => {
-            return(
-                <li style={{ color:'black',marginBottom:'100px'}} class="list-group-item list-group-item-action list-group-item-primary" >
+                        <div class="mb-2">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChange(e)}>
+                        <option selected>Provincia...</option>
+                        {provincias.map(provincia => (
+                                <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>
+                            ))}
+                        </select>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='codigo_admin' value={inputsPut.codigo_admin} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.codigo_admin}></input>
-        </div>
+                        <div class="mb-2">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
+                        <option selected>Departamento...</option>
+                        {departamentos.map(departamento => (
+                                <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
+                            ))}
+                        </select>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='demo' value={inputsPut.demo} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.demo}></input>
-        </div>
+                        <div class="mb-2">
+                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
+                        <option selected>Localidad...</option>
+                        {localidades.map(localidad => (
+                                <option key={localidad.id} value={localidad.id}>{localidad.nombre}</option>
+                            ))}
+                        </select>
+                        </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='ultimo_numero_comprobante' value={inputsPut.ultimo_numero_comprobante} type="number" class="form-control" id="autoSizingInput" placeholder={configuracion.ultimo_numero_comprobante}></input>
-        </div>
+                        <div className='d-grid gap-2'>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='usa_decimal' value={inputsPut.usa_decimal} type="number" class="form-control" id="autoSizingInput" placeholder={configuracion.usa_decimal}></input>
-        </div>
+                <div className='col-sm-12 col-md-8 col-lg-7'>
+                    <ul class="list-group" style={{ marginTop:'50px'}}>
+                    {
+                        configuraciones.map(configuracion => {
+                            return(
+                                <li style={{ color:'black',marginBottom:'100px'}} class="list-group-item list-group-item-action list-group-item-primary mb-2" >
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='localidad_default' value={inputsPut.localidad_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.localidad_default}></input>
-        </div>
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='codigo_admin' value={inputsPut.codigo_admin} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.codigo_admin}></input>
+                                    </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='departamento_default' value={inputsPut.departamento_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.departamento_default}></input>
-        </div>
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='demo' value={inputsPut.demo} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.demo}></input>
+                                    </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='provincia_default' value={inputsPut.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.provincia_default}></input>
-        </div>
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='ultimo_numero_comprobante' value={inputsPut.ultimo_numero_comprobante} type="number" class="form-control" id="autoSizingInput" placeholder={configuracion.ultimo_numero_comprobante}></input>
+                                    </div>
 
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput"></label>
-            <input onChange={(e) => handleChangePut(e)} name='provincia_default' value={inputsPut.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.provincia_default}></input>
-        </div>
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='usa_decimal' value={inputsPut.usa_decimal} type="number" class="form-control" id="autoSizingInput" placeholder={configuracion.usa_decimal}></input>
+                                    </div>
 
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChange(e)}>
-        <option selected>Pais...</option>
-        {paises.map(pais => (
-                <option key={pais.id} value={pais.id}>{pais.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChange(e)}>
-        <option selected>Provincia...</option>
-        {provincias.map(provincia => (
-                <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
-        <option selected>Departamento...</option>
-        {departamentos.map(departamento => (
-                <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
-            ))}
-        </select>
-        </div>
-        
-        <div class="col-auto">
-        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
-        <option selected>Localidad...</option>
-        {localidades.map(localidad => (
-                <option key={localidad.id} value={localidad.id}>{localidad.nombre}</option>
-            ))}
-        </select>
-        </div>
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='localidad_default' value={inputsPut.localidad_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.localidad_default}></input>
+                                    </div>
 
-        <button style={{ marginRight:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-light" onClick={(e) => delet(e)} id={configuracion.id}>Borrar</button>
-        <button style={{ marginLeft:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-light" onClick={(e) => put(e)} id={configuracion.id}>Modificar</button>
-        </li>   
-        )
-    })
-}
-    </ul>
-</div>)
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='departamento_default' value={inputsPut.departamento_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.departamento_default}></input>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='provincia_default' value={inputsPut.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.provincia_default}></input>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <label class="visually-hidden" for="autoSizingInput"></label>
+                                        <input onChange={(e) => handleChangePut(e)} name='provincia_default' value={inputsPut.provincia_default} type="text" class="form-control" id="autoSizingInput" placeholder={configuracion.provincia_default}></input>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_pais' onChange={(e) => handleChange(e)}>
+                                            <option selected>Pais...</option>
+                                            {paises.map(pais => (
+                                                    <option key={pais.id} value={pais.id}>{pais.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+                            
+                                    <div class="col-auto">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_provincia' onChange={(e) => handleChange(e)}>
+                                            <option selected>Provincia...</option>
+                                            {provincias.map(provincia => (
+                                                    <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+                            
+                                    <div class="col-auto">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
+                                            <option selected>Departamento...</option>
+                                            {departamentos.map(departamento => (
+                                                    <option key={departamento.id} value={departamento.id}>{departamento.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+                            
+                                    <div class="col-auto">
+                                        <select class="form-select" id="inlineFormSelectPref" name='id_departamento' onChange={(e) => handleChange(e)}>
+                                            <option selected>Localidad...</option>
+                                            {localidades.map(localidad => (
+                                                    <option key={localidad.id} value={localidad.id}>{localidad.nombre}</option>
+                                                ))}
+                                        </select>
+                                    </div>
+
+                                    <button style={{ marginRight:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-danger" onClick={(e) => delet(e)} id={configuracion.id}>Borrar</button>
+                                    <button style={{ marginLeft:'50px', marginTop:'20px',marginBottom:'10px'}} type="button" class="btn btn-warning" onClick={(e) => put(e)} id={configuracion.id}>Modificar</button>
+                                </li>   
+                            )
+                        })
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Configuracion;
