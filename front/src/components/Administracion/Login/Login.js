@@ -62,8 +62,8 @@ function Login()
                 const cookies = new Cookies();
                 cookies.set('usuario',res.data[0].usuario,{path:'/'});
                 cookies.set('contrasena',res.data[0].contrasena,{path:'/'});
-                alert("Bienvenido");
                 window.location.href = './admin';
+                alert("Bienvenido");
             }
             else{
                 alert('Usuario o contraseña incorrectos');
@@ -100,7 +100,7 @@ return(
 
                 <b><p class="text-black text-center">
                     No sos parte de nuestra familia?
-                    <Link class="nav-link  text-decoration-none text-black" to='/registro'>Registrate aqui</Link>
+                    <Link class="nav-link text-black" to='/registro'>Registrate aqui</Link>
                 </p></b>
 
             </div>

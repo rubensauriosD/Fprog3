@@ -1,32 +1,29 @@
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import Cards from './Cards/Cards';
 
 function Tienda(){
 
     return(
 
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item navbar-brand ">
-                            <Link class="nav-link h2" to='/tienda'>Tienda 💸</Link>
-                        </li>
-                        <li class="nav-item navbar-brand ">
-                            <Link class="nav-link h3" to='/carrito' style={{marginLeft:'1550px'}}>Carrito 🛒</Link>
-                        </li>
-                    </ul>
+
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid d-flex justify-content-between" id="navbarNav">
+                        <Link class="nav-link text-decoration-none text-white display-6" to='/tienda'>Tienda 💸</Link>
+                        <ul class="navbar-nav d-flex justify-content-between">
+                            <li class="nav-item">
+                                <NavLink class="nav-link h3 text-white display-6" to='/carrito'>Carrito 🛒</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>                
+
+                <div class="d-flex flex-row justify-content-evenly">
+                    <Cards/> 
                 </div>
             </div>
-        </nav>
 
-        <div class="col">
-            <h1>Tienda</h1>
-            <Cards/> 
-        </div>
 
-    </div>
     )
 }
 

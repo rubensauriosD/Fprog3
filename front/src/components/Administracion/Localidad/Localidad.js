@@ -41,6 +41,7 @@ function Localidad()
         e.preventDefault();
         axios.post('http://localhost:3001/localidad', inputs)
         alert(`${inputs.nombre} creado correctamente`)
+        window.location.href = "./localidad"
     }
 
     function delet(e) {
@@ -48,6 +49,7 @@ function Localidad()
         var id = e.target.id;
         axios.delete(`http://localhost:3001/localidad/${id}`, inputs)
         alert(`${inputs.nombre} borrado correctamente`)
+        window.location.href = "./localidad"
     }
 
     function put(e) {
@@ -55,6 +57,7 @@ function Localidad()
         var id = e.target.id;
         axios.put(`http://localhost:3001/localidad/${id}`, inputsPut)
         alert(`${inputsPut.nombre} modificado correctamente`)
+        window.location.href = "./localidad"
     }
 
     return(

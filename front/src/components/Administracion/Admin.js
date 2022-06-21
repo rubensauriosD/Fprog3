@@ -24,62 +24,59 @@ function Admin(){
     return(
 
     <header>
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark align-baseline">
             <div class="container-fluid">
 
-                <a class="h3 text-decoration-none text-white">ADMINISTRACION 📋</a>
+                <a class="h2 text-decoration-none text-white">ADMINISTRACION 📋</a>
 
                 <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div style={{marginLeft: "100px"}} class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav d-flex justify-content-center">
+                    <ul style={{display:"flex", justifyContent:"space-evenly"}} class="navbar-nav d-flex justify-content-center">
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/articulo'>Articulos</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/articulo'>Articulos</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/tipoArticulo'>Tipo Articulo</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/tipoArticulo'>Tipo Articulo</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/cliente'>Cliente</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/cliente'>Cliente</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/comprobante'>Comprobante</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/comprobante'>Comprobante</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/configuracion'>Configuracion</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/configuracion'>Configuracion</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/localidad'>Localidad</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/localidad'>Localidad</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/departamento'>Departamento</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/departamento'>Departamento</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/provincia'>Provincia</NavLink>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/provincia'>Provincia</Link>
                         </li>
-                        <li><Link class="nav-link disabled text-decoration-none text-white" >|</Link></li>
+                        <li><Link class="nav-link disabled text-decoration-none text-white h2" >|</Link></li>
                         <li class="nav-item">
-                            <NavLink class="nav-link text-decoration-none text-white" to='/admin/pais'>Pais</NavLink>
-                        </li>
-                        <li>
-                            <button id="cerrarSesion"class="btn btn-warning cerrasSesion" type="submit" onClick={(e) => cerrarSesion(e)}>
-                                <i class="fa fa-power-off" aria-hidden="true"></i>
-                            </button>
+                            <Link class="nav-link text-decoration-none text-white" to='/admin/pais'>Pais</Link>
                         </li>
                     </ul>
                 </div>
             </div>
 
+            <button style={{marginRight: "0px"}} id="cerrarSesion"class="btn btn-warning cerrasSesion" type="submit" onClick={(e) => cerrarSesion(e)}>
+                Cerrar Sesion
+            </button>                
             <Link class="btn btn-warning reporte" to='/admin/reportes'>Reportes</Link>
         </nav>
     </header>

@@ -37,6 +37,7 @@ function Pais()
         e.preventDefault();
         axios.post('http://localhost:3001/pais', inputs)
         alert(`${inputs.nombre} creado correctamente`)
+        window.location.href = "./pais"
     }
 
     function delet(e) {
@@ -44,6 +45,7 @@ function Pais()
         var id = e.target.id;
         axios.delete(`http://localhost:3001/pais/${id}`, inputs)
         alert(`${inputs.nombre} borrado correctamente`)
+        window.location.href = "./pais"
     }
 
     function put(e) {
@@ -51,6 +53,7 @@ function Pais()
         var id = e.target.id;
         axios.put(`http://localhost:3001/pais/${id}`, inputsPut)
         alert(`${inputsPut.nombre}  modificado correctamente`)
+        window.location.href = "./pais"
     }
 
     return(
