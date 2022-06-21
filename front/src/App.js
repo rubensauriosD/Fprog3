@@ -18,6 +18,8 @@ import PagoExitoso from './components/Tienda/Pago/PagoExitoso';
 import PagoFallido from './components/Tienda/Pago/PagoFallido';
 import PagoPendiente from './components/Tienda/Pago/PagoPendiente';
 import Reportes from './components/Administracion/Reportes/Reportes';
+import Registro from './components/Administracion/Registro/Registro';
+
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
       <Route exact path='/pagofallido' component={PagoFallido}></Route>
       <Route exact path='/pagopendiente' component={PagoPendiente}></Route>
       <Route exact path='/' component={Login}></Route>
+      <Route exact path='/registro' component={Registro}></Route>
+      
     </div>
   );
 }

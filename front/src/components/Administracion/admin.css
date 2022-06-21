@@ -1,0 +1,23 @@
+.reporte{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 80px;
+    z-index: 2;
+}
+
+.cerrarSesion{
+    position: fixed;
+    bottom: 25px;
+    right: 15px;
+    width: 80px;
+    z-index: 2;
+}
+
+/* nav{
+    font-size: 30px;
+} */
+
+.nav-item{
+    font-size: 30px;
+}
