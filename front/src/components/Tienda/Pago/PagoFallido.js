@@ -8,7 +8,7 @@ function PagoFallido() {
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item navbar-brand ">
-                    <Link class="nav-link h2" to='/tienda'>Tienda 💸</Link>
+                    <Link class="nav-link h2" to='/'>Tienda 💸</Link>
                 </li>
                 <li class="nav-item navbar-brand ">
                     <Link class="nav-link h3" to='/carrito' style={{marginLeft:'1550px'}}>Carrito 🛒</Link>
