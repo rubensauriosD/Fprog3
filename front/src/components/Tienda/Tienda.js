@@ -25,7 +25,7 @@ function Tienda(){
     width: "200px",
     zIndex: "2",
     fontSize: "30px"}}>
-                <Link class="nav-link text-black" to='/registro'>Registrate aqui</Link>
+                <Link class="nav-link text-black" to='/registro'>Si no te registraste, Registrate aqui!</Link>
                </b>
             </div>
     )
