@@ -38,14 +38,14 @@ function App() {
       <Route exact path='/admin/reportes' component={Reportes}></Route>
 
         {/* <Route exact path='/login' component={Login}></Route> */}
-      <Route exact path='/tienda' component={Tienda}></Route>
+      <Route exact path='/' component={Tienda}></Route>
       <Route exact path='/carrito' component={Carrito}></Route>
       <Route exact path='/compra' component={Compra}></Route>
 
       <Route exact path='/pagoexitoso' component={PagoExitoso}></Route>
       <Route exact path='/pagofallido' component={PagoFallido}></Route>
       <Route exact path='/pagopendiente' component={PagoPendiente}></Route>
-      <Route exact path='/' component={Login}></Route>
+      <Route exact path='/login' component={Login}></Route>
       <Route exact path='/registro' component={Registro}></Route>
       
     </div>

@@ -4,7 +4,7 @@ import { useEffect,useState} from 'react';
 import {getArticulo} from '../../../actions/actions'
 import Card from '../Card/Card';
 // import { Carousel } from 'rsuite';
-
+ 
 function Cards(){
     var articulos = useSelector(state => state.articulo);
     const dispatch = useDispatch();

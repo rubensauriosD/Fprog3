@@ -98,10 +98,7 @@ return(
 
                 <hr class="text-white"></hr>
 
-                <b><p class="text-black text-center">
-                    No sos parte de nuestra familia?
-                    <Link class="nav-link text-black" to='/registro'>Registrate aqui</Link>
-                </p></b>
+
 
             </div>
         </div>

@@ -53,6 +53,7 @@ function Registro()
         e.preventDefault();
         axios.post('http://localhost:3001/cliente', inputs)
         alert(`${inputs.ape_nom} creado correctamente`)
+        window.location.href = './';
     }
 
 return(
@@ -76,8 +77,8 @@ return(
                     <label class="visually-hidden" for="autoSizingInput"></label>
                     <input onChange={(e) => handleChange(e)} name='celular' value={inputs.celular} type="number" class="form-control  mb-2" id="autoSizingInput" placeholder="Celular" required maxLength={30}></input>
 
-                    <label class="visually-hidden" for="autoSizingInput"></label>
-                    <input onChange={(e) => handleChange(e)} name='estado' value={inputs.estado} type="text" class="form-control mb-2" id="autoSizingInput" placeholder="Estado" required maxLength={25}></input>
+                    {/* <label class="visually-hidden" for="autoSizingInput"></label>
+                    <input onChange={(e) => handleChange(e)} name='estado' value={inputs.estado} type="text" class="form-control mb-2" id="autoSizingInput" placeholder="Estado" required maxLength={25}></input> */}
 
                     <select class="form-select mb-2" id="inlineFormSelectPref" name='id_pais' required onChange={(e) => handleChange(e)}>
                         <option selected>Pais...</option>
